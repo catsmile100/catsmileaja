@@ -16,15 +16,15 @@
             text-align: center;
         }
         .container {
-            max-width: 800px;
+            max-width: 1200px; /* Increased max-width for wider layout */
             margin: 50px auto;
             padding: 20px;
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* Two-column layout */
-            gap: 20px; /* Gap between columns */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Dynamic column width */
+            gap: 40px; /* Increased gap between columns */
         }
         .column {
             padding: 20px;
@@ -32,17 +32,24 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Added box shadow */
             text-align: left;
         }
-        .mainnet h1, .testnet h1 {
-            font-size: 32px; /* Increased font size for titles */
-            margin-bottom: 20px; /* Added margin below titles */
-            color: #007bff; /* Name color */
-        }
-        .mainnet {
-            background-color: #2ecc71; /* Updated background color for Mainnet */
-        }
-        .testnet {
-            background-color: #e74c3c; /* Updated background color for Testnet */
-        }
+		.mainnet h1, .testnet h1 {
+			font-size: 32px; /* Increased font size for titles */
+			margin-bottom: 20px; /* Added margin below titles */
+			color: #007bff; /* Name color */
+			text-align: center; /* Center align titles */
+		}
+
+		.mainnet, .testnet {
+			background-color: #2ecc71; /* Updated background color for Mainnet */
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 20px; /* Added padding */
+			border-radius: 10px; /* Added border radius */
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Added box shadow */
+			text-align: center; /* Center align content */
+			margin-bottom: 20px; /* Added margin */
+		}
         .ascii-art {
             margin-bottom: 20px;
             text-align: center; /* Center ASCII text */
@@ -103,24 +110,29 @@
         /* Style for centering image */
         .image-container {
             display: flex;
-            justify-content: center;
             align-items: center;
-            height: 300px; /* Set height as needed */
+            flex-direction: column; /* Align content vertically */
+            margin-bottom: 20px;
         }
 
         .image-container img {
-            max-width: 100%;
-            max-height: 100%;
+            width: 30%; /* Adjust image width */
+            height: auto;
+            margin-bottom: 10px; /* Add space below image */
         }
 
+        .button-container {
+            display: flex;
+            gap: 10px; /* Add space between buttons */
+        }
     </style>
 </head>
-<body>
-
 <!-- Centered image -->
 <div class="image-container">
     <img src="https://bafkreif6sifl3owmtmcwhnuooiujajdrx22274e3irsxu36stok43f3tba.ipfs.nftstorage.link/" alt="Gambar" style="width: 30%; height: auto;">
 </div>
+
+<body>
 
 <div class="marquee-container">
     <div class="marquee-text">
@@ -129,77 +141,121 @@
 </div>
 
 <div class="container">
-        <div class="column mainnet">
+    <div class="column mainnet">
             <h1>Mainnet</h1>
             <div class="chain-info">
-                <h1 style="color: #fff;">Powerloom</h1>
-                <p><a href="https://github.com/catsmile100/Validor-Mainnet/tree/main/Powerloom"><button class="box">Documentation</button></a></p>
-                <p><a href="https://snapshotter-dashboard.powerloom.network"><button class="box">Stake</button></a></p>
+                <div class="image-container">
+                    <img src="https://bafkreigz6eiudh26rgi25wshs4rvybbqpanrknytrxiylxyddkly7e2z6a.ipfs.nftstorage.link/" alt="Pactus Chain Image">
+                    <h1 style="color: #fff;">Powerloom</h1>
+                    <div class="button-container">
+                        <a href="https://github.com/catsmile100/Validor-Mainnet/tree/main/Powerloom"><button class="box">Documentation</button></a>
+                        <a href="https://snapshotter-dashboard.powerloom.network"><button class="box">Stake</button></a>
+                    </div>
+                </div>
             </div>
-            
             <div class="chain-info">
-                <h1 style="color: #fff;">BlockX</h1>
-                <p><a href="https://github.com/catsmile100/Validor-Mainnet/blob/main/BlockX"><button class="box">Documentation</button></a></p>
-                <p><a href="https://ping.blockxnet.com/blockx/staking/blockxvaloper1fk7wy5jxnqrlsjwh68k9qm3mdtg96w33879dry"><button class="box">Stake</button></a></p>
+                <div class="image-container">
+                    <img src="https://bafkreiemish4bgluhcwtd5ch6ghp2cyaetqc3tm6vh7kg3uzpeoh6xqx2y.ipfs.nftstorage.link/" alt="Pactus Chain Image">
+                    <h1 style="color: #fff;">BlockX</h1>
+                    <div class="button-container">
+                        <a href="https://github.com/catsmile100/Validor-Mainnet/blob/main/BlockX"><button class="box">Documentation</button></a>
+                        <a href="https://ping.blockxnet.com/blockx/staking/blockxvaloper1fk7wy5jxnqrlsjwh68k9qm3mdtg96w33879dry"><button class="box">Stake</button></a>
+                    </div>
+                </div>
             </div>
-            
             <div class="chain-info">
-                <h1 style="color: #fff;">Pactus Chain</h1>
-                <p><a href="https://github.com/catsmile100/Validator-Mainnet/tree/main/Pactus"><button class="box">Documentation</button></a></p>
-                <p><a href="https://pacscan.org/address/pc1pfyth9kd4rtjpl0k80773fsq9z7wd9z92v5cew3"><button class="box">Stake</button></a></p>
+                <div class="image-container">
+                    <img src="https://bafkreib74na725sgikgaazxtrzm2bqmromsshhsx4etbbwj3rbovyqieay.ipfs.nftstorage.link/" alt="Pactus Chain Image">
+                    <h1 style="color: #fff;">Pactus Chain</h1>
+                    <div class="button-container">
+                        <a href="https://github.com/catsmile100/Validator-Testnet/tree/main/Pactus"><button class="box">Documentation</button></a>
+                        <a href="https://pacscan.org/address/pc1pfyth9kd4rtjpl0k80773fsq9z7wd9z92v5cew3"><button class="box">Stake</button></a>
+                    </div>
+                </div>
             </div>
-
             <div class="chain-info">
-                <h1 style="color: #fff;">Massalab</h1>
-                <p><a href="https://github.com/catsmile100/Validor-Mainnet/tree/main/MassaLab"><button class="box">Documentation</button></a></p>
-                <p><a href="soon"><button class="box">Stake</button></a></p>
+                <div class="image-container">
+                    <img src="https://bafkreiaw6k45vxqxqet4bbnyejacyrmuzukzixj7qmqmj46dhrhhfw634a.ipfs.nftstorage.link/" alt="Pactus Chain Image">
+                    <h1 style="color: #fff;">Massalab</h1>
+                    <div class="button-container">
+                        <a href="https://github.com/catsmile100/Validor-Mainnet/tree/main/MassaLab"><button class="box">Documentation</button></a>
+                        <a href="soon"><button class="box">Stake</button></a>
+                    </div>
+                </div>
             </div>
         </div>
-    
         <div class="column testnet">
             <h1>Testnet</h1>
             <div class="chain-info">
-                <h1 style="color: #fff;">Namada</h1>
-                <p><a href="https://namada.catsmile.tech/"><button class="box">Documentation</button></a></p>
-                <p><a href="soon"><button class="box">Stake</button></a></p>
+                <div class="image-container">
+                    <img src="https://bafkreiaylqf5oiytlh4k5z2ext5dykn3kf3tgmugqfaqtn3dvrs56suil4.ipfs.nftstorage.link/" alt="Pactus Chain Image">
+                    <h1 style="color: #fff;">Namada</h1>
+                    <div class="button-container">
+                        <a href="https://docs.namada.info"><button class="box">Documentation</button></a>
+                        <a href="soon"><button class="box">Stake</button></a>
+                    </div>
+                </div>
             </div>
-            
             <div class="chain-info">
-                <h1 style="color: #fff;">Nulink</h1>
-                <p><a href="https://github.com/catsmile100/Validator-Testnet/tree/main/Nulink"><button class="box">Documentation</button></a></p>
-                <p><a href="https://dashboard.testnet.nulink.org/"><button class="box">Validator</button></a></p>
+                <div class="image-container">
+                    <img src="https://bafkreia5ogz3wn6jen6vfdzs7oq2hz6afsa6unitfog3pyg5zaxjyytgqi.ipfs.nftstorage.link/" alt="Pactus Chain Image">
+                    <h1 style="color: #fff;">Nulink</h1>
+                    <div class="button-container">
+                        <a href="https://github.com/catsmile100/Validator-Testnet/tree/main/Nulink"><button class="box">Documentation</button></a>
+                        <a href="https://dashboard.testnet.nulink.org/"><button class="box">Stake</button></a>
+                    </div>
+                </div>
             </div>
-            
             <div class="chain-info">
-                <h1 style="color: #fff;">Mantrachain</h1>
-                <p><a href="https://github.com/catsmile100/Validator-Testnet/tree/main/Mantra%20Chain"><button class="box">Documentation</button></a></p>
-                <p><a href="https://testnet.itrocket.net/mantra/staking/mantravaloper1wvh4zdftncywjnskvmnug8369rdjxmtaa2qymn"><button class="box">Validator</button></a></p>
+                <div class="image-container">
+                    <img src="https://bafkreiagcfazp7wgpm2q4osrlgwqvis67mbyjc77otx7x3g4hya4jfx5ty.ipfs.nftstorage.link/" alt="Pactus Chain Image">
+                    <h1 style="color: #fff;">Mantrachain</h1>
+                    <div class="button-container">
+                        <a href="https://github.com/catsmile100/Validator-Testnet/tree/main/Mantra%20Chain"><button class="box">Documentation</button></a>
+                        <a href="https://testnet.itrocket.net/mantra/staking/mantravaloper1wvh4zdftncywjnskvmnug8369rdjxmtaa2qymn"><button class="box">Stake</button></a>
+                    </div>
+                </div>
             </div>
-            
             <div class="chain-info">
-                <h1 style="color: #fff;">Entrypoint</h1>
-                <p><a href="https://github.com/catsmile100/Validator-Testnet/blob/main/Entrypoint"><button class="box">Documentation</button></a></p>
-                <p><a href="https://explorer.nodex.one/entrypoint/staking/entrypointvaloper1lr0xtcj7zcq44qzrzneg3wa5wcs68w5xf3rmrz"><button class="box">Validator</button></a></p>
+                <div class="image-container">
+                    <img src="https://bafkreibicbycmujiwirbppk7ajd3zuy7uiuprkylfp4hn6tfcfnwz7h5dm.ipfs.nftstorage.link/" alt="Pactus Chain Image">
+                    <h1 style="color: #fff;">Entrypoint</h1>
+                    <div class="button-container">
+                        <a href="https://github.com/catsmile100/Validator-Testnet/blob/main/Entrypoint"><button class="box">Documentation</button></a>
+                        <a href="https://explorer.nodex.one/entrypoint/staking/entrypointvaloper1lr0xtcj7zcq44qzrzneg3wa5wcs68w5xf3rmrz"><button class="box">Stake</button></a>
+                    </div>
+                </div>
             </div>
-            
             <div class="chain-info">
-                <h1 style="color: #fff;">Entangle</h1>
-                <p><a href="https://github.com/catsmile100/Validator-Testnet/tree/main/Entangle"><button class="box">Documentation</button></a></p>
-                <p><a href="https://testnet.itrocket.net/entangle/staking/ethmvaloper1pfpwlch4lk3d6k9wxfwjlsdrpcdf45xxxglum8"><button class="box">Validator</button></a></p>
+                <div class="image-container">
+                    <img src="https://bafkreid7e6earz3mjfvkzjgljuy2v6konxkyya3vgqwvhhlmm47twpwti4.ipfs.nftstorage.link/" alt="Pactus Chain Image">
+                    <h1 style="color: #fff;">Entangle</h1>
+                    <div class="button-container">
+                        <a href="https://github.com/catsmile100/Validator-Testnet/tree/main/Entangle"><button class="box">Documentation</button></a>
+                        <a href="https://testnet.itrocket.net/entangle/staking/ethmvaloper1pfpwlch4lk3d6k9wxfwjlsdrpcdf45xxxglum8"><button class="box">Stake</button></a>
+                    </div>
+                </div>
             </div>
-            
             <div class="chain-info">
-                <h1 style="color: #fff;">Prymz</h1>
-                <p><a href="https://github.com/catsmile100/Validator-Testnet/tree/main/PRYMZM"><button class="box">Documentation</button></a></p>
-                <p><a href="https://testnet.itrocket.net/pryzm/staking/pryzmvaloper1x3z27wjdr02vg72mrmmlf239gzyhkmsplx9p3k"><button class="box">Validator</button></a></p>
+                <div class="image-container">
+                    <img src="https://bafkreiby25r6kyh7p6o6c6xorvbxphtyieu4mr7malpateyobaqhrjbfjy.ipfs.nftstorage.link/" alt="Pactus Chain Image">
+                    <h1 style="color: #fff;">Prymz</h1>
+                    <div class="button-container">
+                        <a href="https://github.com/catsmile100/Validator-Testnet/tree/main/PRYMZM"><button class="box">Documentation</button></a>
+                        <a href="https://testnet.itrocket.net/pryzm/staking/pryzmvaloper1x3z27wjdr02vg72mrmmlf239gzyhkmsplx9p3k"><button class="box">Stake</button></a>
+                    </div>
+                </div>
             </div>
-            
             <div class="chain-info">
-                <h1 style="color: #fff;">Lumoz</h1>
-                <p><a href="https://github.com/catsmile100/Validator-Testnet/tree/main/Lumoz"><button class="box">Documentation</button></a></p>
-                <p><a href="https://lumoz.org/leaderboard"><button class="box">Validator</button></a></p>
+                <div class="image-container">
+                    <img src="https://bafkreigpeqh4hncgrrqbgvdea2phmuevx4sjsthghgtxlwyevifowd5hf4.ipfs.nftstorage.link/" alt="Pactus Chain Image">
+                    <h1 style="color: #fff;">Lumoz</h1>
+                    <div class="button-container">
+                        <a href="https://github.com/catsmile100/Validator-Testnet/tree/main/Lumoz"><button class="box">Documentation</button></a>
+                        <a href="https://lumoz.org/leaderboard"><button class="box">Stake</button></a>
+                    </div>
+                </div>
             </div>
-            
         </div>
     </div>
 
@@ -208,8 +264,6 @@
         <a href="https://discord.com/users/399571183986802688"><i class="fab fa-discord"></i></a>
         <a href="https://t.me/deleletaccount"><i class="fab fa-telegram"></i></a>
         <a href="https://github.com/catsmile100"><i class="fab fa-github"></i></a>
-        <a href="mailto:catsmile91@gmail.com"><i class="far fa-envelope"></i></a>
-
     </div>
 </body>
 </html>
