@@ -88,24 +88,34 @@
             padding: 5px 10px;
             margin-top: 2px; /* Added margin top */
         }
-        .marquee-container {
-            width: 100%;
-            overflow: hidden;
-        }
-        .marquee-text {
-            white-space: nowrap; /* Prevent text from wrapping to the next line */
-            animation: marquee 20s linear infinite; /* Apply animation with duration of 20 seconds */
-            font-size: 34px; /* Increased font size */
-        }
+	.marquee-container {
+   	 	width: 100%;
+   	 	overflow: hidden;
+	}
 
-        @keyframes marquee {
-            0% {
-                transform: translateX(100%);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
-        }
+	.marquee-text {
+    		white-space: nowrap;
+   		animation: marquee 20s linear infinite, colorChange 10s infinite alternate; /* Menambahkan animasi perubahan warna */
+    		font-size: 34px;
+	}
+
+	@keyframes marquee {
+    		0% {
+        	transform: translateX(100%);
+    		}
+    		100% {
+        	transform: translateX(-100%);
+   	 }
+	}
+
+	@keyframes colorChange {
+    		0%, 100% {
+        	color: red; /* Warna awal */
+    		}
+   		 50% {
+        	color: blue; /* Warna perubahan */
+    		}
+	}
 
         /* Style for centering image */
         .image-container {
